@@ -1,0 +1,18 @@
+Ethan Wang
+1184940
+A4 cis 3490
+March 27 2023
+
+Q11.c 
+compile: gcc -Wall -std=c99 Q11.c -o Q11
+run: ./Q11
+
+Q12.c
+compile: gcc -Wall -std=c99 Q12.c -o Q12
+run: ./Q12
+
+Q2.c
+compile: gcc -Wall -std=c99 Q2.c -o Q2
+run: ./Q2
+
+or use makefile command make

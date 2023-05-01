@@ -1,0 +1,38 @@
+Ethan Wang
+1184940
+A2 cis 3490
+
+compile q1 manually using 
+
+gcc -Wall -std=c99 q1.c -o q1
+
+run using ./q1
+
+compile q12 manually using 
+
+gcc -Wall -std=c99 q12.c -o q12
+
+run using ./q12
+
+compile q2 manually using
+
+gcc -Wall -std=c99 q2.c -o q2
+
+run using ./q2
+
+compile q22 manually using
+
+gcc -Wall -std=c99 q22.c -o q22
+
+run using ./q22
+
+comiple using makefile
+
+use command make all to run the make file
+
+to run programs use commands
+
+./q1
+./q12
+./q2
+./q22

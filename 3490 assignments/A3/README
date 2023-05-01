@@ -1,0 +1,170 @@
+P11.c
+compile: gcc -Wall -std=c99 P11.c -o P11
+run: ./P11
+
+P12.c
+compile: gcc -Wall -std=c99 P12.c -o P12
+run: ./P12
+
+P21.c
+compile: gcc -Wall -std=c99 P21.c -o P21
+run: ./P21
+
+P22.c
+compile: gcc -Wall -std=c99 P22.c -o P22
+run ./P22
+
+P23.c
+compile: gcc -Wall -std=c99 P22.c -o P23
+run ./P23
+
+or use makefile command make
+
+
+2.4
+
+P21.c
+Pattern to search for: maintain
+Count: 137
+Shifts: 2988263
+Execution time: 0.021000s 
+
+Pattern to search for: selection
+Count: 103
+Shifts: 2944215
+Execution time: 0.022000s 
+
+Pattern to search for: basis
+Count: 194     
+Shifts: 3120407
+Execution time: 0.020000s  
+
+Pattern to search for: cis
+Count: 110
+Shifts: 3208504
+Execution time: 0.022000s 
+
+Pattern to search for: zebra
+Count: 0
+Shifts: 3120407
+Execution time: 0.021000s
+
+Pattern to search for: MELAB
+Count: 3
+Shifts: 3120407      
+Execution time: 0.021000s  
+
+Pattern to search for: z
+Count: 1278
+Shifts: 3296602
+Execution time: 0.021000s
+
+Pattern to search for: (s)
+Count: 7306
+Shifts: 3208504
+Execution time: 0.020000s 
+
+Pattern to search for: GND
+Count: 1
+Shifts: 3208504
+Execution time: 0.020000s
+
+Pattern to search for: Supplementary
+Count: 2
+Shifts: 2768023
+Execution time: 0.020000s
+
+P22.c
+
+Pattern to search for: maintain
+Count: 137
+Shifts: 474817
+Execution time: 0.016000s
+
+Pattern to search for: selection
+Count: 103
+Shifts: 433521
+Execution time: 0.016000s
+
+Pattern to search for: basis
+Count: 194
+Shifts: 720847
+Execution time: 0.018000s
+
+Pattern to search for: cis
+Count: 110
+Shifts: 1137132
+Execution time: 0.019000s
+
+Pattern to search for: zebra
+Count: 0
+Shifts: 702543
+Execution time: 0.017000s
+
+Pattern to search for: MELAB 
+Count: 3
+Shifts: 644653
+Execution time: 0.016000s
+
+Pattern to search for: z
+Count: 1278
+Shifts: 3296602
+Execution time: 0.027000s
+
+Pattern to search for: (s)
+Count: 7306
+Shifts: 1127523
+Execution time: 0.018000s
+
+Pattern to search for: GND
+Count: 1
+Shifts: 1086297
+Execution time: 0.018000s
+
+Pattern to search for: Supplementary
+Count: 2
+Shifts: 322683
+Execution time: 0.016000s
+
+analysis
+
+Shifts
+maintain: 6.29 (2988263/474817)
+selection: 6.79 (2944215/433521)
+basis: 4.33 (3120407/720847)
+cis: 2.82 (3208504/1137132)
+zebra: 4.44 (3120407/702543)
+MELAB: 4.84 (3120407/644653)
+z: 1.00 (3296602/3296602)
+(s): 2.85 (3208504/1127523)
+GND: 2.95 (3208504/1086297)
+Supplementary: 8.57 (2768023/322683)
+
+average: 4.378
+
+Execution time
+maintain: 1.313 (0.021000/0.016000)
+selection: 1.375 (0.022000/0.016000)
+basis: 1.111 (0.020000/0.018000)
+cis: 1.158 (0.022000/0.019000)
+Zebra: 1.235 (0.021000/0.017000)
+MELAB: 1.313 (0.021000/0.016000)
+z: 0.778 (0.021000/0.027000)
+(s): 1.111 (0.020000/0.018000)
+GND: 1.111 (0.020000/0.018000)
+Supplementary: 1.250 (0.020000/0.016000)
+
+average: 1.2775
+
+on average P21 preforms worse than P22 in terms of both Shifts and Execution time
+P22 preforms on average 4.378 times better than P21 in terms of number of Shifts
+P22 preforms on average 1.2775 times better than P21 in terms of Execution time
+
+P22 actually preforms worse than P21 in one test case which was the z test case
+with the same amount of Shifts however P22 was slower than P21 by 0.006000s
+
+P22 preforms much better than P21 in longer words as the the ratio for Execution time 
+and Shifts are the greatest with longer words such as Supplementary, Selection and maintain
+
+this is because it skips some chars in the string by using the bad match table making
+P22 horspool algorithm fast than P21 brute force 
