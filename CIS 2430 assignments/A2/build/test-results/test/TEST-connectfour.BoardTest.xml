@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="connectfour.BoardTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-11-30T02:50:54" hostname="DESKTOP-16NQA0P" time="0.013">
+  <properties/>
+  <testcase name="saveFile" classname="connectfour.BoardTest" time="0.006"/>
+  <testcase name="validate" classname="connectfour.BoardTest" time="0.0"/>
+  <testcase name="checkWinner" classname="connectfour.BoardTest" time="0.006"/>
+  <testcase name="loadFile" classname="connectfour.BoardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
