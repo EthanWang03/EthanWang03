@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>CIS 2750 A4</title>
+    <style>
+        .container {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        .bar {
+            display: inline-block;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            margin-right: 10px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px;
+        }
+        .bar:hover {
+            background-color: #e7e7e7;
+        }
+        .active {
+            background-color: white;
+        }
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+    </style>
+    <script>
+        function setActiveBar(element) {
+            var bars = document.querySelectorAll('.bar');
+            for (var i = 0; i < bars.length; i++) {
+                bars[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("form").submit(function(event) {
+                    event.preventDefault();
+                    var formData = $(this).serialize();
+                    formData += "&page=" + encodeURIComponent(window.location.href);
+                    $.ajax({
+                        type: "POST",
+                        url: "/rotate",
+                        data: formData,
+                    });
+                });
+            });
+        </script>
+</head>
+<body>
+    <div class="container">
+        <h1>CIS 2750 A4</h1>
+        <div class="bar active" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/">Home</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/sdf_upload.html">Upload an SDF file</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/MoleculeList.html">Molecule List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/ElementList.html">Element List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/add_Element.html">Add Element</a>
+        </div>
+        <p>Created by Ethan Wang</p>
+    </div>
+    <div class="svg.container">
+        <h1>Rotate Molecule</h1>
+        <form action="" method="post">
+            <label for="number">X:</label><br>
+            <input type="number" id="X" name="X" required><br>
+            <label for="code">Y:</label><br>
+            <input type="number" id="Y" name="Y" required><br>
+            <label for="code">Z:</label><br>
+            <input type="number" id="Z" name="Z" required><br>
+            <input type="hidden" name="submit" value="true">
+            <input type="submit" value="Submit">
+        </form>
+
+        

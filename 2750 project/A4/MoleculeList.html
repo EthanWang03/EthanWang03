@@ -1,0 +1,82 @@
+<html>
+                <head>
+                    <title>CIS 2750 A4</title>
+                    <style>
+                        .container {
+                            text-align: center;
+                            background-color: black;
+                            color: white;
+                            padding: 10px;
+                        }
+                        .bar {
+                            display: inline-block;
+                            padding: 10px;
+                            background-color: white;
+                            border: none;
+                            margin-right: 10px;
+                            cursor: pointer;
+                            outline: none;
+                            border-radius: 5px;
+                        }
+                        .bar:hover {
+                            background-color: #e7e7e7;
+                        }
+                        .active {
+                            background-color: white;
+                        }
+                        .display {
+                            text-align: center;
+                        }
+                        table {
+                            border-collapse: separate;
+                            border-spacing: 20px;
+                            margin: 0 auto;
+                        }
+                        th, td {
+                            padding: 10px;
+                            text-align: center;
+                        }
+                    </style>
+                    <script>
+                        function setActiveBar(element) {
+                            var bars = document.querySelectorAll('.bar');
+                            for (var i = 0; i < bars.length; i++) {
+                                bars[i].classList.remove('active');
+                            }
+                            element.classList.add('active');
+                        }
+                    </script>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>CIS 2750 A4</h1>
+                        <div class="bar active" onclick="setActiveBar(this)">
+                            <a href="http://localhost:54940/">Home</a>
+                        </div>
+                        <div class="bar" onclick="setActiveBar(this)">
+                            <a href="http://localhost:54940/sdf_upload.html">Upload an SDF file</a>
+                        </div>
+                        <div class="bar" onclick="setActiveBar(this)">
+                            <a href="http://localhost:54940/MoleculeList.html">Molecule List</a>
+                        </div>
+                        <div class="bar" onclick="setActiveBar(this)">
+                            <a href="http://localhost:54940/ElementList.html">Element List</a>
+                        </div>
+                        <div class="bar" onclick="setActiveBar(this)">
+                            <a href="http://localhost:54940/add_Element.html">Add Element</a>
+                        </div>
+                        <p>Created by Ethan Wang</p>
+                    </div>
+                    <div class="display">
+                    <h1>Molecules</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Atoms</th>
+                            <th>Bonds</th>
+                            <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>

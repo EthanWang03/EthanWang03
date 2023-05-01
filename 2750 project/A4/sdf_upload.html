@@ -1,0 +1,162 @@
+<html>
+<head>
+    <style>
+        .container {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload {
+            text-align: center;
+        }
+        #file-selector-label {
+            background-color: #ddd;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #file-selector-label:hover {
+            background-color: #ccc;
+        }
+        #file-name {
+            margin-top: 20px;
+            display: none;
+        }
+        #submit-button {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+        #submit-button:hover {
+            background-color: #3e8e41;
+        }
+        #username{
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+        #username-input{
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+            margin: auto;
+        }
+        .bar {
+            display: inline-block;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            margin-right: 10px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px;
+        }
+        .bar:hover {
+            background-color: #e7e7e7;
+        }
+        .active {
+            background-color: white;
+        }
+    </style>
+    <script>
+        function setActiveBar(element) {
+            var bars = document.querySelectorAll('.bar');
+            for (var i = 0; i < bars.length; i++) {
+                bars[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>CIS 2750 A4</h1>
+        <div class="bar active" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/">Home</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/sdf_upload.html">Upload an SDF file</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/MoleculeList.html">Molecule List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/ElementList.html">Element List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/add_Element.html">Add Element</a>
+        </div>
+        <p>Created by Ethan Wang</p>
+    </div>
+    <div class="upload">
+        <h1>File Uploader</h1>
+        <form id="upload-form" enctype="multipart/form-data" method="post">
+            <label for="file-selector" id="file-selector-label">Select an SDF file</label>
+            <input type="file" id="file-selector" accept=".sdf">
+        </form>
+        <div id="file-name"></div>
+        <label id="username">Molecule Name:</label>
+        <input type="text" id="username-input" name="username" maxlength="10" required>
+        <button id="submit-button">Upload</button>
+    </div>
+    <script>
+        const fileSelector = document.getElementById("file-selector");
+        const fileName = document.getElementById("file-name");
+        const submitButton = document.getElementById("submit-button");
+        const username = document.getElementById("username");
+        const usernameInput = document.getElementById("username-input");
+
+        fileSelector.addEventListener("change", (event) => {
+            const fileList = event.target.files;
+            if (fileList.length > 0) {
+                const file = fileList[0];
+                if (file.name.endsWith(".sdf")) {
+                    fileName.textContent = file.name;
+                    fileName.style.display = "block";
+                    submitButton.style.display = "block";
+                    username.style.display = "block";
+                    usernameInput.style.display = "block";
+
+                } else {
+                    alert("Please select an SDF file");
+                    fileSelector.value = "";
+                }
+            }
+        });
+        submitButton.addEventListener("click", () => {
+            const xhr = new XMLHttpRequest();
+            const formData = new FormData();
+
+            const fileList = fileSelector.files;
+            if (fileList.length > 0) {
+                const file = fileList[0];
+                formData.append("file", file);
+                formData.append("username", usernameInput.value);
+                xhr.open("POST", "/upload", true);
+                xhr.send(formData);
+
+                alert("File uploaded successfully");
+                fileSelector.value = "";
+                fileName.style.display = "none";
+                username.style.display = "none";
+                submitButton.style.display = "none";
+                usernameInput.style.display = "none";
+                username.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

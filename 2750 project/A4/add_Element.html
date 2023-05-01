@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>CIS 2750 A4</title>
+    <style>
+        .container {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        .bar {
+            display: inline-block;
+            padding: 10px;
+            background-color: white;
+            border: none;
+            margin-right: 10px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px;
+        }
+        .bar:hover {
+            background-color: #e7e7e7;
+        }
+        .active {
+            background-color: white;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function setActiveBar(element) {
+            var bars = document.querySelectorAll('.bar');
+            for (var i = 0; i < bars.length; i++) {
+                bars[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("form").submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "/submit",
+                    data: formData,
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>CIS 2750 A4</h1>
+        <div class="bar active" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/">Home</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/sdf_upload.html">Upload an SDF file</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/MoleculeList.html">Molecule List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/ElementList.html">Element List</a>
+        </div>
+        <div class="bar" onclick="setActiveBar(this)">
+            <a href="http://localhost:54940/add_Element.html">Add Element</a>
+        </div>
+        <p>Created by Ethan Wang</p>
+    </div>
+        <h1>Insert Element</h1>
+        <form action="" method="post">
+            <label for="number">Number:</label><br>
+            <input type="number" id="number" name="number" required><br>
+            <label for="code">Code:</label><br>
+            <input type="text" id="code" name="code" required><br>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="colour1">Colour 1:</label><br>
+            <input type="text" id="colour1" name="colour1" required><br>                                
+            <label for="colour2">Colour 2:</label><br>
+            <input type="text" id="colour2" name="colour2" required><br>
+            <label for="colour3">Colour 3:</label><br>
+            <input type="text" id="colour3" name="colour3" required><br>
+            <label for="radius">Radius:</label><br>
+            <input type="number" id="radius" name="radius" required><br><br>
+            <input type="hidden" name="submit" value="true">
+            <input type="submit" value="Submit">
+        </form>
+</body>
+</html>
