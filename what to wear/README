@@ -1,0 +1,114 @@
+What to Wearinator!
+
+decide what to wear 
+uses a SQL database to store all clothing
+generate outfit using temperature
+
+example output
+
+Menu:
+1. Add a new item
+2. Display all tables
+3. Generate a random outfit by temperature
+4. Delete item
+5. Exit
+Enter your choice (1-5): 4
+
+Hats Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Mesh Hat         | White     | Hot
+2  | Baseball Cap     | White     | Warm
+3  | Bucket Hat       | Green     | Light
+4  | Beanie           | Black     | Cool
+5  | Racoon Hat       | Brown     | Cold
+6  | Party Hat        | Pink      | Warm
+
+
+Shirts Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Sports Shirt     | Blue      | Hot
+2  | T Shirt          | Purple    | Warm
+3  | Button Up        | Yellow    | Light
+4  | Long Sleeve      | Black     | Cool
+5  | Sweater          | Red       | Cold
+6  | Jersey           | Red       | Warm
+
+
+Pants Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Shorts           | White     | Hot
+2  | Sweat Pants      | Grey      | Warm
+3  | Jeans            | Blue      | Light
+4  | khaki            | Brown     | Cool
+5  | Snow Pants       | Black     | Cold
+6  | Swimsuit         | yellow    | Warm
+
+
+Jackets Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Bomber Jacket    | White     | Warm
+2  | Summer Jacket    | Blue      | Light
+3  | Wind breaker     | Black     | Cool
+4  | Winter Jacket    | Black     | Cold
+
+
+Item Menu:
+1. Delete a Hat
+2. Delete a Shirt
+3. Delete a pair of Pants
+4. Delete a Jacket
+5. Back
+Enter your choice (1-5): 1
+Enter the Hats ID: 6
+
+Menu:
+1. Add a new item
+2. Display all tables
+3. Generate a random outfit by temperature
+4. Delete item
+5. Exit
+Enter your choice (1-5): 2
+
+Hats Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Mesh Hat         | White     | Hot
+2  | Baseball Cap     | White     | Warm
+3  | Bucket Hat       | Green     | Light
+4  | Beanie           | Black     | Cool
+5  | Racoon Hat       | Brown     | Cold
+
+
+Shirts Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Sports Shirt     | Blue      | Hot
+2  | T Shirt          | Purple    | Warm
+3  | Button Up        | Yellow    | Light
+4  | Long Sleeve      | Black     | Cool
+5  | Sweater          | Red       | Cold
+6  | Jersey           | Red       | Warm
+
+
+Pants Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Shorts           | White     | Hot
+2  | Sweat Pants      | Grey      | Warm
+3  | Jeans            | Blue      | Light
+4  | khaki            | Brown     | Cool
+5  | Snow Pants       | Black     | Cold
+6  | Swimsuit         | yellow    | Warm
+
+
+Jackets Table:
+ID | DISC             | COLOUR    | TEMP
+----------------------------------------
+1  | Bomber Jacket    | White     | Warm
+2  | Summer Jacket    | Blue      | Light
+3  | Wind breaker     | Black     | Cool
+4  | Winter Jacket    | Black     | Cold
