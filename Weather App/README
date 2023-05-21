@@ -1,0 +1,3 @@
+Developed a Weather App using Python to provide real-time weather information to users.
+Utilised a weather API (OpenWeatherMap) to fetch weather data based on user input.
+Data is received in a JSON format and is then parsed
